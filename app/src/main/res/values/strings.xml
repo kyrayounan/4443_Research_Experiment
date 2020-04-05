@@ -1,0 +1,6 @@
+<resources>
+	<string name="app_name">Speech To Text</string>
+	<string name="setuptitletext">Speech To Text</string>
+	<string name="button01text">OK</string>
+	<string name="button03text">Exit</string>
+</resources>

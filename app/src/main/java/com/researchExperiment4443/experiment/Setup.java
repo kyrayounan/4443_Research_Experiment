@@ -1,4 +1,4 @@
-package com.sriyanksiddhartha.speechtotext;
+package com.researchExperiment4443.experiment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,9 +7,6 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
-
-import com.sriyanksiddhartha.speechtotext.SpeechInput;
-import com.sriyanksiddhartha.speechtotext.TypingInput;
 
 public class Setup extends AppCompatActivity {
         static EditText initialsInput;

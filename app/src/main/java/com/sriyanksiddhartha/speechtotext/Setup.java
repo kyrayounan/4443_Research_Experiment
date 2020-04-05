@@ -8,6 +8,9 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import com.sriyanksiddhartha.speechtotext.SpeechInput;
+import com.sriyanksiddhartha.speechtotext.TypingInput;
+
 public class Setup extends AppCompatActivity {
         static EditText initialsInput;
         final static String[] GROUP_NUMBER = {"1", "2"};

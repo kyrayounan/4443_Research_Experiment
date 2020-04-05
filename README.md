@@ -1,3 +1,2 @@
-# SpeechToText
-Learn how to convert Speech to Text or Voice to Text in Android. 
-Get the Tutorial here : https://youtu.be/0bLwXw5aFOs 
+# 4443 Research Experiment
+Test speed and error rate of Speech to Text vs. Typing

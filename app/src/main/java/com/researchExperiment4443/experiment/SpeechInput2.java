@@ -6,7 +6,6 @@ import android.speech.RecognizerIntent;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -16,7 +15,7 @@ import java.util.Locale;
 
 import static android.content.ContentValues.TAG;
 
-public class SpeechInput extends AppCompatActivity {
+public class SpeechInput2 extends AppCompatActivity {
 
 	private TextView txvResult;
 	TextView sentenceText;
@@ -47,7 +46,7 @@ sentenceText = (TextView) findViewById(R.id.enterTextTyping);
 		Intent intent = getIntent();
 		initials = intent.getStringExtra("initials");
 		group = intent.getStringExtra("group");
-		sentence = intent.getStringExtra("sentence");
+		sentence = "hi";
 
 		enterText = sentence;
 		sentenceText.setText(sentence);
@@ -131,7 +130,7 @@ sentenceText = (TextView) findViewById(R.id.enterTextTyping);
 			b.putLong("time", time );
 			b.putString("initials", initials);
 			b.putString("group", group);
-			Intent i = new Intent(getApplicationContext(), TypingInput.class);
+			Intent i = new Intent(getApplicationContext(), TypingInput2.class);
 			i.putExtras(b);
 			startActivity(i);
 

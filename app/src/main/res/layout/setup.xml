@@ -85,6 +85,30 @@
                     android:gravity="left"
                     android:textAppearance="?android:attr/textAppearanceMedium" />
             </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="40dp"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/paramLabelSentence"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="right"
+                    android:paddingRight="5dp"
+                    android:text="Sentence: "
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:textColor="#000000" />
+
+                <Spinner
+                    android:id="@+id/paramSentence"
+                    style="@style/Widget.AppCompat.Spinner.DropDown"
+                    android:layout_weight="1"
+                    android:dropDownWidth="100dp"
+                    android:gravity="left"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+            </TableRow>
 
             <TableRow android:layout_marginTop="100dp">
 

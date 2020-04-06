@@ -6,7 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,7 +14,7 @@ import android.widget.Toast;
 
 import static android.content.ContentValues.TAG;
 
-public class TypingInput extends AppCompatActivity {
+public class TypingInput3 extends AppCompatActivity {
 
     private TextView result;
     TextView enterText;
@@ -117,7 +116,7 @@ counter++;
             b.putInt("speechError", speechError);
             b.putString("initials", initials);
             b.putString("group", group);
-            Intent i = new Intent(getApplicationContext(), SpeechInput2.class);
+            Intent i = new Intent(getApplicationContext(), SpeechInput4.class);
             i.putExtras(b);
             startActivity(i);
         } else if(result.getText().toString().equals(enterText.getText().toString()) && group.equals("2")){

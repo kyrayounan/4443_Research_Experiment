@@ -24,6 +24,39 @@
 		<activity android:name="com.researchExperiment4443.experiment.TypingInput"
 			android:label="@string/app_name" >
 		</activity>
+		<activity android:name="com.researchExperiment4443.experiment.SpeechInput2"
+			android:label="@string/app_name" >
+		</activity>
+		<activity android:name="com.researchExperiment4443.experiment.TypingInput2"
+			android:label="@string/app_name" >
+		</activity>
+		<activity android:name="com.researchExperiment4443.experiment.SpeechInput3"
+			android:label="@string/app_name" >
+		</activity>
+		<activity android:name="com.researchExperiment4443.experiment.TypingInput3"
+			android:label="@string/app_name" >
+		</activity>
+		<activity android:name="com.researchExperiment4443.experiment.SpeechInput4"
+			android:label="@string/app_name" >
+		</activity>
+		<activity android:name="com.researchExperiment4443.experiment.TypingInput4"
+			android:label="@string/app_name" >
+		</activity>
+		<activity android:name="com.researchExperiment4443.experiment.SpeechInput5"
+			android:label="@string/app_name" >
+		</activity>
+		<activity android:name="com.researchExperiment4443.experiment.TypingInput5"
+			android:label="@string/app_name" >
+		</activity>
+		<activity android:name="com.researchExperiment4443.experiment.SpeechInput6"
+			android:label="@string/app_name" >
+		</activity>
+		<activity android:name="com.researchExperiment4443.experiment.TypingInput6"
+			android:label="@string/app_name" >
+		</activity>
+		<activity android:name="com.researchExperiment4443.experiment.Results"
+			android:label="@string/app_name" >
+		</activity>
 	</application>
 
 </manifest>

@@ -63,7 +63,7 @@ public class Results extends AppCompatActivity {
         textTime = TypingInput.time2;
         speechTime = intent.getLongExtra("time", 0);
         textError = TypingInput.errors;
-        speechError = SpeechInput.errors;
+        speechError = SpeechInput.errors + 1;
 
         textTime2 = TypingInput2.time2;
         speechTime2 = SpeechInput2.time;
@@ -113,34 +113,34 @@ public class Results extends AppCompatActivity {
                 speechTime-TimeUnit.SECONDS.toMillis((TimeUnit.MILLISECONDS.toSeconds( speechTime))));
         String t3 = String.format("%02d:%02d" + "s",
                 TimeUnit.MILLISECONDS.toSeconds( textTime2),
-                textTime2-TimeUnit.SECONDS.toMillis((TimeUnit.MILLISECONDS.toSeconds( textTime))));
+                textTime2-TimeUnit.SECONDS.toMillis((TimeUnit.MILLISECONDS.toSeconds( textTime2))));
         String t4 = String.format("%02d:%02d" + "s",
                 TimeUnit.MILLISECONDS.toSeconds( speechTime2),
-                speechTime2-TimeUnit.SECONDS.toMillis((TimeUnit.MILLISECONDS.toSeconds( speechTime))));
+                speechTime2-TimeUnit.SECONDS.toMillis((TimeUnit.MILLISECONDS.toSeconds( speechTime2))));
         String t5 = String.format("%02d:%02d" + "s",
                 TimeUnit.MILLISECONDS.toSeconds( textTime3),
-                textTime3-TimeUnit.SECONDS.toMillis((TimeUnit.MILLISECONDS.toSeconds( textTime))));
+                textTime3-TimeUnit.SECONDS.toMillis((TimeUnit.MILLISECONDS.toSeconds( textTime3))));
         String t6 = String.format("%02d:%02d" + "s",
                 TimeUnit.MILLISECONDS.toSeconds( speechTime3),
-                speechTime3-TimeUnit.SECONDS.toMillis((TimeUnit.MILLISECONDS.toSeconds( speechTime))));
+                speechTime3-TimeUnit.SECONDS.toMillis((TimeUnit.MILLISECONDS.toSeconds( speechTime3))));
         String t7 = String.format("%02d:%02d" + "s",
                 TimeUnit.MILLISECONDS.toSeconds( textTime4),
-                textTime4-TimeUnit.SECONDS.toMillis((TimeUnit.MILLISECONDS.toSeconds( textTime))));
+                textTime4-TimeUnit.SECONDS.toMillis((TimeUnit.MILLISECONDS.toSeconds( textTime4))));
         String t8 = String.format("%02d:%02d" + "s",
                 TimeUnit.MILLISECONDS.toSeconds( speechTime4),
-                speechTime4-TimeUnit.SECONDS.toMillis((TimeUnit.MILLISECONDS.toSeconds( speechTime))));
+                speechTime4-TimeUnit.SECONDS.toMillis((TimeUnit.MILLISECONDS.toSeconds( speechTime4))));
         String t9 = String.format("%02d:%02d" + "s",
                 TimeUnit.MILLISECONDS.toSeconds( textTime5),
-                textTime5-TimeUnit.SECONDS.toMillis((TimeUnit.MILLISECONDS.toSeconds( textTime))));
+                textTime5-TimeUnit.SECONDS.toMillis((TimeUnit.MILLISECONDS.toSeconds( textTime5))));
         String t10 = String.format("%02d:%02d" + "s",
                 TimeUnit.MILLISECONDS.toSeconds( speechTime5),
-                speechTime5-TimeUnit.SECONDS.toMillis((TimeUnit.MILLISECONDS.toSeconds( speechTime))));
+                speechTime5-TimeUnit.SECONDS.toMillis((TimeUnit.MILLISECONDS.toSeconds( speechTime5))));
         String t11 = String.format("%02d:%02d" + "s",
                 TimeUnit.MILLISECONDS.toSeconds( textTime6),
-                textTime6-TimeUnit.SECONDS.toMillis((TimeUnit.MILLISECONDS.toSeconds( textTime))));
+                textTime6-TimeUnit.SECONDS.toMillis((TimeUnit.MILLISECONDS.toSeconds( textTime6))));
         String t12 = String.format("%02d:%02d" + "s",
                 TimeUnit.MILLISECONDS.toSeconds( speechTime6),
-                speechTime6-TimeUnit.SECONDS.toMillis((TimeUnit.MILLISECONDS.toSeconds( speechTime))));
+                speechTime6-TimeUnit.SECONDS.toMillis((TimeUnit.MILLISECONDS.toSeconds( speechTime6))));
 
         String e = "" + textError + ", " + textError2  + ", " + textError3  + ", " + textError4  + ", " + textError5  + ", " + textError6;
         String e2 = "" + speechError + ", " + speechError2  + ", " + speechError3  + ", " + speechError4  + ", " + speechError5  + ", " + speechError6;
@@ -188,6 +188,18 @@ public class Results extends AppCompatActivity {
         Intent i = new Intent(getApplicationContext(), Setup.class);
         i.putExtras(b);
         startActivity(i);
+        textError = 0;
+        speechError = 0;
+        textError2 = 0;
+        speechError2 = 0;
+        textError3 = 0;
+        speechError3 = 0;
+        textError4 = 0;
+        speechError4 = 0;
+        textError5 = 0;
+        speechError5 = 0;
+        textError6 = 0;
+        speechError6 = 0;
 
         // comment out (return to setup after clicking BACK in main activity
         //finish();

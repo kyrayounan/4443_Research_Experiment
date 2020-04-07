@@ -20,7 +20,16 @@
 		android:layout_gravity="center"
 		android:layout_marginTop="50dp"
 		android:gravity="center"
-		android:text="1"
+		android:text="Block: 1"
+		android:textSize="24sp" />
+	<TextView
+		android:id="@+id/trial"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center"
+		android:layout_marginTop="0dp"
+		android:gravity="center"
+		android:text="Trial: 1"
 		android:textSize="24sp" />
 
 	<TextView

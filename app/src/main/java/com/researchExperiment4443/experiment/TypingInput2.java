@@ -28,7 +28,10 @@ public class TypingInput2 extends AppCompatActivity {
     String initials = "";
     String group = "";
     public static String task = "";
-
+    int block = 1;
+    TextView blockNum;
+    TextView trialNum;
+    String sentence = "";
     public static int errors = 0;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +47,12 @@ public class TypingInput2 extends AppCompatActivity {
         type.addTextChangedListener(inputTextWatcher);
         initials = intent.getStringExtra("initials");
         group = intent.getStringExtra("group");
-
+        blockNum = (TextView) findViewById(R.id.block);
+        trialNum = (TextView) findViewById(R.id.trial);
+        trialNum.setText("Trial: 2");
+        errors = 0;
+        sentence = "I rinsed and dried the dishes";
+        enterText.setText(sentence);
 
     }
 
@@ -74,8 +82,17 @@ public class TypingInput2 extends AppCompatActivity {
 
 
     public void onEnter(View view) {
+
+        if(result.getText().toString().equals(enterText.getText().toString())) {
+            block++;
+            if(block < 6) {
+                type.getText().clear();
+
+                blockNum.setText("Block: " + (block));
+            }
+        }
 counter++;
-        if (counter == 5 && group.equals("1")) {
+        if (counter == 10 && group.equals("1")) {
             Bundle b = new Bundle();
             task = "No";
             time2 = System.currentTimeMillis() - start;
@@ -89,7 +106,7 @@ counter++;
             Intent i = new Intent(getApplicationContext(), SpeechInput3.class);
             i.putExtras(b);
             startActivity(i);
-        } else if(counter == 5 && group.equals("2")){
+        } else if(counter == 10 && group.equals("2")){
             Bundle b = new Bundle();
             task = "No";
             time2 = System.currentTimeMillis() - start;
@@ -100,18 +117,19 @@ counter++;
             b.putInt("speechError", speechError);
             b.putString("initials", initials);
             b.putString("group", group);
-            Intent i = new Intent(getApplicationContext(), SpeechInput.class);
+            Intent i = new Intent(getApplicationContext(), SpeechInput2.class);
             i.putExtras(b);
             startActivity(i);
         }
 
-        if (result.getText().toString().equals(enterText.getText().toString()) && group.equals("1")) {
+        if (result.getText().toString().equals(enterText.getText().toString()) && group.equals("1") && block == 6) {
             Bundle b = new Bundle();
             task = "Yes";
             time2 = System.currentTimeMillis() - start;
             b.putInt("errors", errors);
             b.putLong("time2", time2 );
             b.putLong("time", speechTime);
+            errors = errors - 4;
             b.putInt("textError", errors);
             b.putInt("speechError", speechError);
             b.putString("initials", initials);
@@ -119,7 +137,7 @@ counter++;
             Intent i = new Intent(getApplicationContext(), SpeechInput3.class);
             i.putExtras(b);
             startActivity(i);
-        } else if(result.getText().toString().equals(enterText.getText().toString()) && group.equals("2")){
+        } else if(result.getText().toString().equals(enterText.getText().toString()) && group.equals("2") && block == 6){
             Bundle b = new Bundle();
             task = "Yes";
             time2 = System.currentTimeMillis() - start;
@@ -127,14 +145,15 @@ counter++;
             b.putLong("time2", time2 );
             b.putLong("time", speechTime);
             b.putInt("textError", errors);
+            errors = errors - 4;
             b.putInt("speechError", speechError);
             b.putString("initials", initials);
             b.putString("group", group);
-            Intent i = new Intent(getApplicationContext(), SpeechInput.class);
+            Intent i = new Intent(getApplicationContext(), SpeechInput2.class);
             i.putExtras(b);
             startActivity(i);
         } else {
-            Toast.makeText(this, "Input is not correct. Please try again", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Input again", Toast.LENGTH_SHORT).show();
 
         }
     }

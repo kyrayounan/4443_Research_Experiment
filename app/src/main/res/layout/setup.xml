@@ -31,6 +31,7 @@
                     android:id="@+id/textView"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:textSize="70px"
                     android:text="Please input the following:" />
             </TableRow>
 
@@ -42,7 +43,7 @@
 
                 <TextView
                     android:id="@+id/paramLabelInitials"
-                    android:gravity="right"
+                    android:gravity="left"
                     android:paddingRight="5dp"
                     android:text="Initials: "
                     android:textAppearance="?android:attr/textAppearanceMedium"
@@ -51,7 +52,7 @@
                 <EditText
                     android:id="@+id/initialsInput"
                     android:capitalize="characters"
-                    android:gravity="right"
+                    android:gravity="left"
                     android:lines="1"
                     android:maxLines="1"
                     android:paddingRight="5dp"
@@ -71,7 +72,7 @@
                     android:id="@+id/paramLabelGroup"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="right"
+                    android:gravity="left"
                     android:paddingRight="5dp"
                     android:text="Group Number: "
                     android:textAppearance="?android:attr/textAppearanceMedium"
@@ -91,23 +92,8 @@
                 android:layout_marginBottom="40dp"
                 android:gravity="center">
 
-                <TextView
-                    android:id="@+id/paramLabelSentence"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="right"
-                    android:paddingRight="5dp"
-                    android:text="Sentence: "
-                    android:textAppearance="?android:attr/textAppearanceMedium"
-                    android:textColor="#000000" />
 
-                <Spinner
-                    android:id="@+id/paramSentence"
-                    style="@style/Widget.AppCompat.Spinner.DropDown"
-                    android:layout_weight="1"
-                    android:dropDownWidth="100dp"
-                    android:gravity="left"
-                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
             </TableRow>
 
             <TableRow android:layout_marginTop="100dp">

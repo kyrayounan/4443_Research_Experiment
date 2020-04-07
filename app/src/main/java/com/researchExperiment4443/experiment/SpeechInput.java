@@ -33,7 +33,7 @@ public class SpeechInput extends AppCompatActivity {
 
 
 	public static String task = "";
-	Spinner spinGroup;
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -47,11 +47,11 @@ sentenceText = (TextView) findViewById(R.id.enterTextTyping);
 		Intent intent = getIntent();
 		initials = intent.getStringExtra("initials");
 		group = intent.getStringExtra("group");
-		sentence = intent.getStringExtra("sentence");
+		sentence = "Joe went to the store";
 
 		enterText = sentence;
 		sentenceText.setText(sentence);
-
+		errors = 0;
 
 
 
@@ -64,9 +64,9 @@ sentenceText = (TextView) findViewById(R.id.enterTextTyping);
 		Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
 		intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
 		intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
-		if(counter >= 4) {
+
 			errors++;
-		}
+
 		Log.d(TAG, errors + " erros");
 
 		if (intent.resolveActivity(getPackageManager()) != null) {
@@ -75,7 +75,7 @@ sentenceText = (TextView) findViewById(R.id.enterTextTyping);
 			Toast.makeText(this, "Your Device Doesn't Support Speech Input", Toast.LENGTH_SHORT).show();
 		}
 		counter++;
-		if (counter == 15 && group.equals("1")) {
+		if (counter == 10 && group.equals("1")) {
 			Bundle b = new Bundle();
 			task = "No";
 			time = System.currentTimeMillis() - start;
@@ -87,7 +87,7 @@ sentenceText = (TextView) findViewById(R.id.enterTextTyping);
 			i.putExtras(b);
 			startActivity(i);
 
-		} else if(counter == 15 && group.equals("2")){
+		} else if(counter == 10 && group.equals("2")){
 			Bundle b = new Bundle();
 			task = "No";
 			time = System.currentTimeMillis() - start;
@@ -95,7 +95,7 @@ sentenceText = (TextView) findViewById(R.id.enterTextTyping);
 			b.putLong("time", time );
 			b.putString("initials", initials);
 			b.putString("group", group);
-			Intent i = new Intent(getApplicationContext(), Results.class);
+			Intent i = new Intent(getApplicationContext(), TypingInput2.class);
 			i.putExtras(b);
 			startActivity(i);
 		}
@@ -121,6 +121,7 @@ sentenceText = (TextView) findViewById(R.id.enterTextTyping);
 		if(txvResult.getText().toString().equals(enterText)) {
 			block ++;
 			blockNum.setText("Block: " + (block));
+			errors--;
 		}
 
 		if (txvResult.getText().toString().equals(enterText) && group.equals("1") && block == 6) {
@@ -143,7 +144,7 @@ sentenceText = (TextView) findViewById(R.id.enterTextTyping);
 			b.putLong("time", time );
 			b.putString("initials", initials);
 			b.putString("group", group);
-			Intent i = new Intent(getApplicationContext(), Results.class);
+			Intent i = new Intent(getApplicationContext(), TypingInput2.class);
 			i.putExtras(b);
 			startActivity(i);
 		}
@@ -152,7 +153,7 @@ sentenceText = (TextView) findViewById(R.id.enterTextTyping);
 
 			else {
 			Log.d(TAG, "GROUP" + group);
-			Toast.makeText(this, "Input is not correct. Please try again", Toast.LENGTH_SHORT).show();
+			Toast.makeText(this, "Input again", Toast.LENGTH_SHORT).show();
 
 
 		}

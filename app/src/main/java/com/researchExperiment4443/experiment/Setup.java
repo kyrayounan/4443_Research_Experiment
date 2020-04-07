@@ -41,10 +41,7 @@ public class Setup extends AppCompatActivity {
             ArrayAdapter<CharSequence> adapter1 = new ArrayAdapter<CharSequence>(this, R.layout.spinnerstyle, GROUP_NUMBER);
             spinGroup.setAdapter(adapter1);
             spinGroup.setSelection(0); // 1
-            spinSentence = (Spinner) findViewById(R.id.paramSentence);
-            ArrayAdapter<CharSequence> adapter2 = new ArrayAdapter<CharSequence>(this, R.layout.spinnerstyle, SENTENCE);
-            spinSentence.setAdapter(adapter2);
-            spinSentence.setSelection(0); // 1
+
 
             initialsInput = (EditText) findViewById(R.id.initialsInput);
 
@@ -55,7 +52,7 @@ public class Setup extends AppCompatActivity {
         {
 
             String groupNumber = GROUP_NUMBER[spinGroup.getSelectedItemPosition()];
-            String sentence = SENTENCE[spinSentence.getSelectedItemPosition()];
+
             initials = initialsInput.getText().toString();
             // bundle up parameters to pass on to activity
             Log.d(TAG, "INITIALS: " + initials);
@@ -63,7 +60,7 @@ public class Setup extends AppCompatActivity {
 
             Bundle b = new Bundle();
             b.putString("group", groupNumber);
-            b.putString("sentence", sentence);
+
             b.putString("initials", initials);
 
 

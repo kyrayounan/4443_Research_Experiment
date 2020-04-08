@@ -41,7 +41,9 @@
             android:layout_marginTop="100dp"
             android:background="#d9d9d9"
             android:paddingLeft="10dp"
-            android:paddingRight="10dp">
+            android:paddingRight="10dp"
+            android:paddingTop="20dp">
+
 
             <TableRow
                 android:layout_width="match_parent"
@@ -91,7 +93,7 @@
                     android:id="@+id/textE"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Text Error rate: "
+                    android:text="Text Error: "
                     android:textSize="30px"
                     android:paddingLeft="25dp"
                     android:paddingRight="10dp"/>
@@ -109,7 +111,7 @@
                     android:id="@+id/speechE"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Speech Error rate: "
+                    android:text="Speech Error: "
                     android:textSize="30px"
                     android:paddingLeft="25dp"
                     android:paddingRight="10dp"/>
@@ -125,9 +127,9 @@
 
                 <TextView
                     android:id="@+id/complete"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="Speech Tast Completed: "
+                    android:text="Speech Task Completed: "
                     android:textSize="30px"
                     android:paddingLeft="25dp"
                     android:paddingRight="10dp"/>
@@ -145,7 +147,24 @@
                     android:id="@+id/complete2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text="Text Tast Completed: "
+                    android:text="Text Task Completed: "
+                    android:textSize="30px"
+                    android:paddingLeft="25dp"
+                    android:paddingRight="10dp"/>
+
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:id="@+id/block"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Speech Blocks Completed: "
                     android:textSize="30px"
                     android:paddingLeft="25dp"
                     android:paddingRight="10dp"/>

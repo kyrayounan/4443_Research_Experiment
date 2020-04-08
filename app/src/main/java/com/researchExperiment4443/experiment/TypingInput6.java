@@ -51,7 +51,7 @@ public class TypingInput6 extends AppCompatActivity {
         initials = intent.getStringExtra("initials");
         group = intent.getStringExtra("group");
         enterText = (TextView) findViewById(R.id.enterTextTyping);
-        sentence = "The music is too loud for my ears";
+        sentence = "the music is too loud for my ears";
         enterText.setText(sentence);
         blockNum = (TextView) findViewById(R.id.block);
         trialNum = (TextView) findViewById(R.id.trial);

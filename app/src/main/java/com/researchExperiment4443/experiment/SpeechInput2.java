@@ -27,7 +27,7 @@ public class SpeechInput2 extends AppCompatActivity {
 	String group = "";
 	int counter = 0;
 	String sentence = "";
-	int block = 1;
+	public static int block = 1;
 	TextView blockNum;
 	TextView trialNum;
 
@@ -77,7 +77,7 @@ errors = 0;
 			Toast.makeText(this, "Your Device Doesn't Support Speech Input", Toast.LENGTH_SHORT).show();
 		}
 		counter++;
-		if (counter == 10 && group.equals("1")) {
+		if (errors == 10 && group.equals("1")) {
 			Bundle b = new Bundle();
 			task = "No";
 			time = System.currentTimeMillis() - start;
@@ -89,7 +89,7 @@ errors = 0;
 			i.putExtras(b);
 			startActivity(i);
 
-		} else if(counter == 10 && group.equals("2")){
+		} else if(errors == 10 && group.equals("2")){
 			Bundle b = new Bundle();
 			task = "No";
 			time = System.currentTimeMillis() - start;

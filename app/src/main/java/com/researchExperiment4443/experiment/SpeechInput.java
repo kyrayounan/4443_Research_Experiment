@@ -28,7 +28,7 @@ public class SpeechInput extends AppCompatActivity {
 	String group = "";
 	int counter = 0;
 	String sentence = "";
-	int block = 1;
+	public static int block = 1;
 	TextView blockNum;
 
 
@@ -75,7 +75,7 @@ sentenceText = (TextView) findViewById(R.id.enterTextTyping);
 			Toast.makeText(this, "Your Device Doesn't Support Speech Input", Toast.LENGTH_SHORT).show();
 		}
 		counter++;
-		if (counter == 10 && group.equals("1")) {
+		if (errors == 10 && group.equals("1")) {
 			Bundle b = new Bundle();
 			task = "No";
 			time = System.currentTimeMillis() - start;
@@ -87,7 +87,7 @@ sentenceText = (TextView) findViewById(R.id.enterTextTyping);
 			i.putExtras(b);
 			startActivity(i);
 
-		} else if(counter == 10 && group.equals("2")){
+		} else if(errors == 10 && group.equals("2")){
 			Bundle b = new Bundle();
 			task = "No";
 			time = System.currentTimeMillis() - start;
@@ -133,6 +133,7 @@ sentenceText = (TextView) findViewById(R.id.enterTextTyping);
 			b.putString("initials", initials);
 			b.putString("group", group);
 			Intent i = new Intent(getApplicationContext(), TypingInput.class);
+
 			i.putExtras(b);
 			startActivity(i);
 
@@ -141,7 +142,7 @@ sentenceText = (TextView) findViewById(R.id.enterTextTyping);
 			task = "Yes";
 			time = System.currentTimeMillis() - start;
 			b.putInt("errors", errors);
-			b.putLong("time", time );
+			b.putLong("time", time);
 			b.putString("initials", initials);
 			b.putString("group", group);
 			Intent i = new Intent(getApplicationContext(), TypingInput2.class);

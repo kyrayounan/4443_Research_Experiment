@@ -41,8 +41,7 @@ public class TypingInput2 extends AppCompatActivity {
         enterText = (TextView) findViewById(R.id.enterTextTyping);
         start = System.currentTimeMillis();
         Intent intent = getIntent();
-        speechTime = intent.getLongExtra("time", 0);
-        speechError = intent.getIntExtra("errors", 0);
+
         type = (EditText) findViewById(R.id.editText);
         type.addTextChangedListener(inputTextWatcher);
         initials = intent.getStringExtra("initials");
@@ -57,10 +56,9 @@ public class TypingInput2 extends AppCompatActivity {
     }
 
     private TextWatcher inputTextWatcher = new TextWatcher() {
-        int befor = 0;
-        int after = 0;
+
         public void afterTextChanged(Editable type) {
-            after = type.length();
+
         }
         public void beforeTextChanged(CharSequence tyoe, int start, int count, int after)
         {
@@ -71,8 +69,10 @@ public class TypingInput2 extends AppCompatActivity {
             Log.d(TAG, before + " before");
             Log.d(TAG, count + " count");
             Log.d(TAG, start + " start");
+
             if(before > count) {
                 errors+=1;
+
             }
         }
     };
@@ -98,9 +98,7 @@ counter++;
             time2 = System.currentTimeMillis() - start;
             b.putInt("errors", errors);
             b.putLong("time2", time2 );
-            b.putLong("time", speechTime);
             b.putInt("textError", errors);
-            b.putInt("speechError", speechError);
             b.putString("initials", initials);
             b.putString("group", group);
             Intent i = new Intent(getApplicationContext(), SpeechInput3.class);
@@ -109,12 +107,11 @@ counter++;
         } else if(counter == 10 && group.equals("2")){
             Bundle b = new Bundle();
             task = "No";
+
             time2 = System.currentTimeMillis() - start;
             b.putInt("errors", errors);
             b.putLong("time2", time2 );
-            b.putLong("time", speechTime);
             b.putInt("textError", errors);
-            b.putInt("speechError", speechError);
             b.putString("initials", initials);
             b.putString("group", group);
             Intent i = new Intent(getApplicationContext(), SpeechInput2.class);
@@ -128,10 +125,9 @@ counter++;
             time2 = System.currentTimeMillis() - start;
             b.putInt("errors", errors);
             b.putLong("time2", time2 );
-            b.putLong("time", speechTime);
-            errors = errors - 4;
+         errors = errors - 4;
             b.putInt("textError", errors);
-            b.putInt("speechError", speechError);
+
             b.putString("initials", initials);
             b.putString("group", group);
             Intent i = new Intent(getApplicationContext(), SpeechInput3.class);
@@ -143,10 +139,10 @@ counter++;
             time2 = System.currentTimeMillis() - start;
             b.putInt("errors", errors);
             b.putLong("time2", time2 );
-            b.putLong("time", speechTime);
+
             b.putInt("textError", errors);
             errors = errors - 4;
-            b.putInt("speechError", speechError);
+
             b.putString("initials", initials);
             b.putString("group", group);
             Intent i = new Intent(getApplicationContext(), SpeechInput2.class);

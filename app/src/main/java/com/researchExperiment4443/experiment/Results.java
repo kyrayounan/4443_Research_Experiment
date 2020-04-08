@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+
 import java.util.concurrent.TimeUnit;
 
 public class Results extends AppCompatActivity {
@@ -40,6 +41,12 @@ public class Results extends AppCompatActivity {
     int speechError6 = 0;
     String initials = "";
     String group = "";
+    int blockComplete;
+    int blockComplete2;
+    int blockComplete3;
+    int blockComplete4;
+    int blockComplete5;
+    int blockComplete6;
 
 	/*final static String[] GAIN = { "Very low", "Low", "Medium", "High", "Very high" };
 	final static String[] PATH_TYPE = { "Square", "Circle", "Free" };
@@ -90,6 +97,13 @@ public class Results extends AppCompatActivity {
         textError6 = TypingInput6.errors;
         speechError6 = SpeechInput6.errors;
 
+        blockComplete = SpeechInput.block - 1;
+        blockComplete2 = SpeechInput2.block - 1;
+        blockComplete3 = SpeechInput3.block - 1;
+        blockComplete4 = SpeechInput4.block - 1;
+        blockComplete5 = SpeechInput5.block - 1;
+        blockComplete6 = SpeechInput6.block - 1;
+
         initials = intent.getStringExtra("initials");
         group = intent.getStringExtra("group");;
         speechError = speechError -1;
@@ -101,6 +115,7 @@ public class Results extends AppCompatActivity {
         TextView g = (TextView) findViewById(R.id.group);
         TextView c = (TextView) findViewById(R.id.complete);
         TextView c2 = (TextView) findViewById(R.id.complete2);
+        TextView b = (TextView) findViewById(R.id.block);
 
 
 
@@ -159,14 +174,17 @@ public class Results extends AppCompatActivity {
         String task11 = SpeechInput2.task;
         String task12 = TypingInput2.task;
 
+        String blocks = "" + blockComplete + ", " + blockComplete2+ ", " + blockComplete3+ ", " + blockComplete4+ ", " + blockComplete5+ ", " + blockComplete6;
         tt.append(t + ", " + t3 + ", " + t5+ ", " + t7+ ", " + t9+ ", " + t11);
         st.append(t2 + ", " + t4 + ", " + t6 + ", " + t8 + ", " + t10 + ", " + t12);
         te.append(e);
         se.append(e2);
         i.append(n);
         g.append(gr);
+        b.append(blocks);
         c.append(task + ", " + task3  + ", " + task5  + ", " + task7  + ", " + task9  + ", " + task11);
         c2.append(task2 + ", " + task4  + ", " + task6  + ", " + task8  + ", " + task10  + ", " + task12);
+
 
 
 

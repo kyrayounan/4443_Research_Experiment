@@ -68,7 +68,7 @@ public class Results extends AppCompatActivity {
         setContentView(R.layout.results);
         Intent intent = getIntent();
         textTime = TypingInput.time2;
-        speechTime = intent.getLongExtra("time", 0);
+        speechTime = SpeechInput.time;
         textError = TypingInput.errors;
         speechError = SpeechInput.errors + 1;
 
@@ -165,14 +165,14 @@ public class Results extends AppCompatActivity {
         String task2 = TypingInput.task;
         String task3 = SpeechInput2.task;
         String task4 = TypingInput2.task;
-        String task5 = SpeechInput2.task;
-        String task6 = TypingInput2.task;
-        String task7 = SpeechInput2.task;
-        String task8 = TypingInput2.task;
-        String task9 = SpeechInput2.task;
-        String task10 = TypingInput2.task;
-        String task11 = SpeechInput2.task;
-        String task12 = TypingInput2.task;
+        String task5 = SpeechInput3.task;
+        String task6 = TypingInput3.task;
+        String task7 = SpeechInput4.task;
+        String task8 = TypingInput4.task;
+        String task9 = SpeechInput5.task;
+        String task10 = TypingInput5.task;
+        String task11 = SpeechInput6.task;
+        String task12 = TypingInput6.task;
 
         String blocks = "" + blockComplete + ", " + blockComplete2+ ", " + blockComplete3+ ", " + blockComplete4+ ", " + blockComplete5+ ", " + blockComplete6;
         tt.append(t + ", " + t3 + ", " + t5+ ", " + t7+ ", " + t9+ ", " + t11);

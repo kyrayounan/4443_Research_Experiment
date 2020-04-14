@@ -87,7 +87,7 @@ sentenceText = (TextView) findViewById(R.id.enterTextTyping);
 			i.putExtras(b);
 			startActivity(i);
 
-		} else if(counter == 10 && group.equals("2")){
+		} else if(errors == 10 && group.equals("2")){
 			Bundle b = new Bundle();
 			task = "No";
 			time = System.currentTimeMillis() - start;
